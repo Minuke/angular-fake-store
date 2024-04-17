@@ -26,6 +26,11 @@
     "paths": {
       "styles": ["styles/styles.scss"],
       "assets": ["assets/*"],
+      "@api/*": ["src/app/api/*"],
+      "@features/*": ["src/app/features/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@models/*": ["src/app/models/*"],
+      "@envs/*": ["src/environments/*"],
     }
   },
   "angularCompilerOptions": {
