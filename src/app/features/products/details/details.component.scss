@@ -1,0 +1,36 @@
+.product-title {
+  font-weight: bold;
+  color: #006400; /* Verde oscuro */
+}
+
+.text-success {
+  color: #006400; /* Verde oscuro */
+}
+
+.btn-success {
+  background-color: #006400; /* Verde oscuro */
+  border-color: #006400; /* Verde oscuro */
+}
+
+.btn-success:hover {
+  background-color: #004c00; /* Verde más oscuro */
+  border-color: #004c00; /* Verde más oscuro */
+}
+
+.img-fluid {
+	max-width: 60%;
+}
+
+.product-container {
+	margin: 100px;
+}
+
+.product-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.rating {
+	margin-right: 10px;
+}
