@@ -1,10 +1,10 @@
 <div class="card" style="width: 18rem;">
-	<a [routerLink]="['/products-details', product().id]">
+	<a [routerLink]="['/products', product().id]">
 		<img [src]="product().image" class="card-img-top" alt="{{product().title}}">
 	</a>
 	<div class="card-body">
 		<span class="card-text text-success">{{product().category}}</span>
-		<p [routerLink]="['/products-details', product().id]" class="card-title product-title pointer">
+		<p [routerLink]="['/products', product().id]" class="card-title product-title pointer">
 			@if(product().title.length >= 30){
 				<p>{{product().title | slice:0:27}}...</p>
 			} @else {
