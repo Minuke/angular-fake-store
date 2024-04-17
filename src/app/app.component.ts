@@ -1,8 +1,7 @@
-import { Component, Signal, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ProductsService } from '@api/products.service';
-import { Product } from '@shared/models/product.interface';
+
 import { HeaderComponent } from './layout/header/header.component';
 
 @Component({

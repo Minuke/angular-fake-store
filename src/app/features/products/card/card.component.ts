@@ -1,5 +1,5 @@
 import { SlicePipe } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '@shared/models/product.interface';
 
@@ -13,5 +13,10 @@ import { Product } from '@shared/models/product.interface';
 export class CardComponent {
 
   public product = input.required<Product>();
+  public addToCartEvent = output<Product>();
+
+  addToCart(): void {
+    this.addToCartEvent.emit(this.product());
+  }
 
 }
