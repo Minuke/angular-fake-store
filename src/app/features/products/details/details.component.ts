@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit, Signal, inject, input } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ProductsService } from '@api/products.service';
 import { Product } from '@shared/models/product.interface';
 
@@ -14,7 +15,9 @@ export class DetailsComponent implements OnInit {
 
   public productId = input<number>(0, {alias: 'id'});
   private readonly productsService = inject(ProductsService)
+  private readonly sanitizer = inject(DomSanitizer);
   public product!:Signal<Product | undefined>;
+  public starsArray:number[] = new Array(5).fill(0);
 
   ngOnInit(): void {
     this.product = this.productsService.getProductById(this.productId())
@@ -22,5 +25,16 @@ export class DetailsComponent implements OnInit {
 
   addToCart():void {
     
+  }
+
+  getStarType(index: number): string {
+    const rate = this.product()?.rating.rate as number;
+    if (index + 1 <= Math.floor(rate)) {
+      return 'bi bi-star-fill';
+    } else if (index  < rate) {
+      return 'bi bi-star-half';
+    } else {
+      return 'bi bi-star'
+    }
   }
 }
