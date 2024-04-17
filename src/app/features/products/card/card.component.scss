@@ -48,3 +48,11 @@
   background-color: #004c00; /* Verde más oscuro */
   border-color: #004c00; /* Verde más oscuro */
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  color: #006400;
+}
