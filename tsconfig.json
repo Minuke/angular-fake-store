@@ -22,15 +22,15 @@
       "ES2022",
       "dom"
     ],
-    "baseUrl": "./src",
+    "baseUrl": "./src/",
     "paths": {
-      "styles": ["styles/styles.scss"],
-      "assets": ["assets/*"],
-      "@api/*": ["src/app/api/*"],
-      "@features/*": ["src/app/features/*"],
-      "@shared/*": ["src/app/shared/*"],
-      "@models/*": ["src/app/models/*"],
-      "@envs/*": ["src/environments/*"],
+      "@styles": ["styles/styles.scss"],
+      "@assets": ["assets/*"],
+      "@api/*": ["app/api/*"],
+      "@features/*": ["app/features/*"],
+      "@shared/*": ["app/shared/*"],
+      "@models/*": ["app/models/*"],
+      "@envs/*": ["environments/*"],
     }
   },
   "angularCompilerOptions": {

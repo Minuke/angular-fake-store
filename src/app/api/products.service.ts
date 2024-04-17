@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
-import { Product } from 'app/shared/models/product.interface';
-import { environment } from 'environments/environment.development';
+import { environment } from '@envs/environment.development';
+import { Product } from '@shared/models/product.interface';
 import { Observable, tap } from 'rxjs';
 
 @Injectable({
@@ -25,6 +25,6 @@ export class ProductsService {
     }
 
     public getProductById(id: number): Observable<Product> {
-      return this.http.get<Product>(`${this.endPoint}/products/${id}`);
+      return this.http.get<Product>(`${this.endPoint}/${id}`);
     }
 }
