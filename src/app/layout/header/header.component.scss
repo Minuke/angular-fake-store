@@ -1,0 +1,91 @@
+.navbar {
+  padding: 1rem;
+  background-color: #006400;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  align-items: baseline;
+}
+
+.link {
+  margin-right: 1.5rem;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-content {
+  position: absolute;
+  right: 0;
+  width: 12rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: #708090;
+  border-radius: 0.25rem;
+}
+
+.cart-content div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-content hr {
+  margin: 1rem 0;
+  border-top: 1px solid #808080;
+}
+
+.cart-content .total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-weight: 300;
+}
+
+.cart-content .total span {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.withouta {
+	text-decoration: none;
+}
+
+.color-text {
+	color: #FFFFFF
+}
+
+.cart-counter {
+  position:absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-25%, -50%); 
+  font-size: 9px; 
+  font-weight: bold; 
+  color: white;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.show-cart-animation {
+  animation: slideDown 0.5s ease-in-out forwards;
+  z-index: 10;
+}
