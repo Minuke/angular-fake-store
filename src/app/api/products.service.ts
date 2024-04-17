@@ -19,12 +19,12 @@ export class ProductsService {
 
     public getProducts(): void {
       this.http
-      .get<Product[]>(`${this.endPoint}`)
+      .get<Product[]>(`${this.endPoint}/products/`)
       .pipe(tap((data:Product[]) => this.products.set(data)))
       .subscribe();
     }
 
     public getProductById(id: number): Observable<Product> {
-      return this.http.get<Product>(`${this.endPoint}/${id}`);
+      return this.http.get<Product>(`${this.endPoint}/products/${id}`);
     }
 }
