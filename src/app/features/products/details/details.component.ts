@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-details',
@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class DetailsComponent {
 
+  public productId = input<number>(0, {alias: 'id'});
+  
 }
