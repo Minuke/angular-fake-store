@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
+import { Product } from 'app/shared/models/product.interface';
 import { environment } from 'environments/environment.development';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-    public products = signal<any[]>([]);
+    public products = signal<Product[]>([]);
     private readonly http = inject(HttpClient);
     private readonly endPoint = environment.apiURL; 
 
@@ -18,12 +19,12 @@ export class ProductsService {
 
     public getProducts(): void {
       this.http
-      .get<any[]>(`${this.endPoint}`)
-      .pipe(tap((data:any[]) => this.products.set(data)))
+      .get<Product[]>(`${this.endPoint}`)
+      .pipe(tap((data:Product[]) => this.products.set(data)))
       .subscribe();
     }
 
-    public getProductById(id: number): any {
-      return this.http.get<any>(`${this.endPoint}/${id}`);
+    public getProductById(id: number): Observable<Product> {
+      return this.http.get<Product>(`${this.endPoint}/${id}`);
     }
 }
