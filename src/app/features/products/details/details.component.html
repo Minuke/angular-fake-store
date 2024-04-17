@@ -1,1 +1,9 @@
---> {{ productId() }}
+<div>{{ product()?.image }}</div>
+<div>{{ product()?.title }}</div>
+<div>{{ product()?.category }}</div>
+<div>{{ product()?.title }}</div>
+<div>{{ product()?.price | currency }}</div>
+<div>{{ product()?.rating?.rate }}</div>
+<div>{{ product()?.rating?.count }}</div>
+<div>{{ product()?.description }}</div>
+<button (click)="addToCart()" class="btn btn-success card-button">Add to cart</button>
