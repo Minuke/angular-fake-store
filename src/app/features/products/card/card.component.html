@@ -1,1 +1,6 @@
-<p>{{product().title}}</p>
+@if(product().title.length >= 30){
+	<p>{{product().title | slice:0:30}}...</p>
+} @else {
+	<p>{{product().title}}</p>
+}
+
