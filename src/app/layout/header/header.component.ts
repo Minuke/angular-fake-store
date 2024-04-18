@@ -1,6 +1,7 @@
 import { CurrencyPipe, NgClass, SlicePipe } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CartStore } from '@shared/store/shopping-cart.store';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
 
-  showCart = signal<boolean>(false);
+  public showCart = signal<boolean>(false);
+  public cartStore = inject(CartStore);
   
 }

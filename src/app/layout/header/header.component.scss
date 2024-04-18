@@ -46,7 +46,6 @@
 .cart-content .total {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
   font-weight: 300;
 }
 
@@ -71,6 +70,12 @@
   font-size: 9px; 
   font-weight: bold; 
   color: white;
+}
+
+.cart-content .divider {
+  margin: 10px 0;
+  border: none; 
+  border-top: 5px solid #000000;
 }
 
 @keyframes slideDown {

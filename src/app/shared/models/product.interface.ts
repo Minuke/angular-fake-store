@@ -6,6 +6,7 @@ export interface Product {
 	description:string;
 	image:string;
 	rating:Rating;
+	// custom attributes
 	qty:number;
 	subtotal:number;
 }

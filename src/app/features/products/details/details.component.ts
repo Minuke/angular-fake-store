@@ -3,6 +3,7 @@ import { Component, OnInit, Signal, inject, input } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ProductsService } from '@api/products.service';
 import { Product } from '@shared/models/product.interface';
+import { CartStore } from '@shared/store/shopping-cart.store';
 
 @Component({
   selector: 'app-details',
@@ -18,13 +19,14 @@ export class DetailsComponent implements OnInit {
   private readonly sanitizer = inject(DomSanitizer);
   public product!:Signal<Product | undefined>;
   public starsArray:number[] = new Array(5).fill(0);
-
+  cartStore = inject(CartStore);
+  
   ngOnInit(): void {
     this.product = this.productsService.getProductById(this.productId())
   }
 
-  addToCart():void {
-    
+  addToCart() {
+    this.cartStore.addToCart(this.product() as Product);
   }
 
   getStarType(index: number): string {

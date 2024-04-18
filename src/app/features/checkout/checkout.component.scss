@@ -1,0 +1,49 @@
+.checkout-container {
+	margin: 50px;
+}
+
+h1 {
+	padding:0 0 30px;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+th, td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+.total {
+	font-weight: bold;
+	margin: 0 0 40px;
+}
+.remove-btn {
+	background-color: red;
+	color: white;
+	border: none;
+	padding: 4px 12px;
+	cursor: pointer;
+	border-radius: 7px;
+}
+.clear-btn, .pay-btn {
+	background-color: #006400;
+	color: white;
+	border: none;
+	padding: 8px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 7px;
+}
+
+.checkout-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-top: 20px;
+}

@@ -1,4 +1,4 @@
-import { SlicePipe } from '@angular/common';
+import { CurrencyPipe, SlicePipe } from '@angular/common';
 import { Component, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '@shared/models/product.interface';
@@ -6,7 +6,7 @@ import { Product } from '@shared/models/product.interface';
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [SlicePipe, RouterLink],
+  imports: [SlicePipe, RouterLink, CurrencyPipe],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })

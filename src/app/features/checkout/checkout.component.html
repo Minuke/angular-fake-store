@@ -1,1 +1,32 @@
-<p>checkout works!</p>
+<div class="checkout-container">
+	<h1 class="text-center">Checkout Page</h1>
+	@if(cartStore.totalProducts()) {
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Qty</th>
+			<th>Price</th>
+			<th></th>
+		</tr>
+		@for (product of cartStore.products(); track $index) {
+			<tr>
+				<td>{{product.title}}</td>
+				<td>{{product.qty}}</td>
+				<td>{{product.price | currency}}</td>
+				<td><button (click)="removeItem(product.id)" class="remove-btn">X</button></td>
+			</tr>
+		}
+		
+		<!-- Fin de las filas de los productos -->
+	</table>
+	<div class="checkout-footer">
+        <div class="total h4">Total: {{cartStore.totalAmount() | currency}}</div>
+        <div>
+            <button (click)="clearAll()" class="clear-btn">Clear cart</button>
+            <button (click)="proceedToPay()" class="pay-btn">Pay</button>
+        </div>
+    </div>
+    } @else {
+		<h3 class="text-center">The shopping cart is empty</h3>
+	}
+</div>
