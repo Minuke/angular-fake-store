@@ -5,12 +5,13 @@ import { routes } from './app.routes';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { errorResponseInterceptor } from './shared/interceptors/error-response.interceptor';
 import { provideToastr } from 'ngx-toastr';
+import { spinnerInterceptor } from '@shared/interceptors/spinner.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
     provideToastr({timeOut:1000, preventDuplicates:true}),
     provideRouter(routes, withComponentInputBinding()),
-    provideHttpClient(withFetch(), withInterceptors([errorResponseInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([errorResponseInterceptor, spinnerInterceptor])),
   ]
 };
